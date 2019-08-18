@@ -4,66 +4,71 @@
 int front = -1, rear = -1, i, n=10, x;
 int queue[100];
 
-void is_empty();
-void is_full();
+int is_empty();
+int is_full();
 void enqueue(int data);
 int dequeue();
+void traverse();
 
-void main(){
+void main (){
 
-	int element, choice;
+    int choice = 0;     
+    printf("\n*********Queue operations using Array*********\n");  
+    printf("\n----------------------------------------------\n");  
+    
+    while(choice != 4){  
 
-	for(;;){
-	printf("1. To enqueue\n");
-	printf("2. To dequeue\n");
-	printf("3 To display\n");
-	printf("4. To exit\n");
+        printf("\n\nChoose one from the below options...\n");  
+        printf("\n1.Push\n2.Pop\n3.Show\n4.Exit");  
+        printf("\n Enter your choice \n");        
+        scanf("%d",&choice);  
+        
+        switch(choice){  
 
-	scanf("%d", &i);
-	}
-
-	Switch(choice){
-		case 1:
-		if(is_full()){
-			printf("Error: Overflow\n");
-		}else{
-			printf("Enter the value: \n");
-			scanf("%d", &element)
-			enqueue(element);
-		}
-		break;
-
-		case 2: 
-		if(is_empty()){
-			printf("Error: Underflow\n");
-		}else{
-			element = dequeue();
-			printf("element removed from the queue is %d\n", element);
-		}
-		break;
-		
-		case 3: 
-		if(is_empty(){
-			printf("Queue is empty");
-		}else{
-			traverse();
-		}
-		break;
-		
-		case 4:
-		exit(0);
-
+            case 1:  
+            {   
+                enqueue();  
+                break;  
+            }  
+            case 2:  
+            {  
+                dequeue(); 
+                break;  
+            }  
+            case 3:  
+            {  
+                traverse();
+                break;  
+            }  
+            case 4:   
+            {  
+                printf("Exiting....");  
+                break;   
+            }  
+            default:  
+            {  
+                printf("Please Enter valid choice ");  
+            }   
+       }  
+    }  
+}  
 
 
-void is_empty(){
-	if(rear == rear == -1){
+int is_empty(){
+	if(front == rear == -1){
 		printf("Queue is empty\n");
+		return 1;
+	}else{
+		return 0;
 	}
 }
 
-void is_full(){
+int is_full(){
 	if(rear == n-1){
 		printf("Queue is full\n");
+	return 1;
+	}else{
+		return 0;
 	}
 }
 
@@ -79,14 +84,26 @@ void enqueue(int data){
 	}
 }
 
+
 int dequeue(){
 	if(!is_empty){
-		x=queue[front];
+		x = queue[front];
 		if (front == n-1)		
 		{
-			front =
+			front = rear = -1;   // takecare
+		}else{
+			front++;
 		}
-		front++;
 		return x;
 	}
+}
+
+void traverse(){
+	
+    int i;
+    printf("\nThe Modified Queue is: \n\n");
+ 
+    for(i=0; i <= sizeof(queue); i++){
+        printf("%d",queue[i]);
+    }
 }
