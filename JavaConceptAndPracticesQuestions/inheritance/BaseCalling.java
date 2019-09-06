@@ -5,7 +5,7 @@ class Base{
 	String name;
 	int roll;
 	Scanner s = new Scanner(System.in);
-	void read(){
+	void readBasic(){
 		System.out.println("Input your name: ");
 		name = s.nextLine();
 		System.out.println("Input your roll: ");
