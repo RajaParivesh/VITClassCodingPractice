@@ -63,7 +63,7 @@ if(cgpa>=8 and cgpa<9):
 if(cgpa>=7 and cgpa<8):
     print ('good')
 if(cgpa>=6 and cgpa<7):
-    print ('avarage')
+    print ('average')
 if(cgpa>=5 and cgpa<6):
     print ('better')
 if(cgpa<5):
@@ -102,8 +102,38 @@ n=int(input('Please enter a number: '))
 print('Factorial : ' ,fac(n))
 ```
 
-## 8. Write a menu driven program which get user choice to perform
-add/sub/mul/div with the obtained two input?
+## 8. Write a menu driven program which get user choice to perform add/sub/mul/div with the obtained two input?
+
+
 
 ## 9. Write a program to display few odd multiples of an odd number n ?
 
+## 32. Print the following pattern. (Read n- number of rows)
+*
+* *
+* * *
+* * * *
+* * * * *
+
+```
+n = int(input('Enter a number'))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print('*', end=' ')
+    print()
+```
+## 33. Print the following pattern (read n)
+* * * * * *
+* * * * *
+* * * *
+* * *
+* *
+*
+
+```
+n = int(input('Enter a number'))
+for i in reversed(range(1,n+1)):
+    for j in range(1,i+1):
+        print('*', end=' ')
+    print()    
+```
