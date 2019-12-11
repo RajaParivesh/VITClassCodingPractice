@@ -35,7 +35,6 @@ if (year%100==0):
         print ('non leap year')
 elif(year%4==0):
         print ('leap year')
-
 else:
     print ('Non leap year')
 ```
@@ -51,8 +50,7 @@ are as follows:
 <=7 CGPA <8 - good
 <=6 CGPA <7 - average
 <=5 CGPA <6 - better
-CGPA<5
-- poor
+CGPA<5 - poor
 
 
 ```
@@ -83,7 +81,6 @@ n=int(input())
 print()
 for i in g:
     gInt = int(i)
-    
     if(gInt%n==0):
         print (i)
         
@@ -92,9 +89,21 @@ for i in g:
 
 ## 7. Write a program to find the factorial of a number n?
 ```
+def fac(n):
+    f=1
+    if (n<=0):
+        return 1
+    for i in range(1,n+1):
+        f *= (i)
+    return f
+
+n=int(input('Please enter a number: '))
+
+print('Factorial : ' ,fac(n))
 ```
 
 ## 8. Write a menu driven program which get user choice to perform
 add/sub/mul/div with the obtained two input?
+
 ## 9. Write a program to display few odd multiples of an odd number n ?
 
