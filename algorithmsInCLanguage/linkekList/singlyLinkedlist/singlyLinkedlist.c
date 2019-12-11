@@ -1,5 +1,3 @@
-// Stack using Linkedlist
-
 #include <stdio.h>  
 #include <stdlib.h>  
 void push();  
@@ -13,6 +11,66 @@ struct node
 };  
 
 struct node *head;
+
+
+void push (){  
+    
+    int val;  
+    struct node *ptr = (struct node*)malloc(sizeof(struct node));
+
+        printf("Enter the value");  
+        scanf("%d",&val);  
+        if(ptr == NULL){         
+            ptr->val = val;  
+            ptr -> next = NULL;  
+            head=ptr;  
+        }   
+        else   
+        {  
+            ptr->val = val;  
+            ptr->next = head;  
+            head=ptr;  
+               
+        }  
+        printf("Item pushed");  
+}  
+  
+void pop(){
+
+    int item;  
+    struct node *ptr;  // why malloc is not used at this position | in push it is used why?  
+    if (head == NULL)  
+    {  
+        printf("Underflow");  
+    }  
+    else  
+    {  
+        item = head->val;  
+        head = head->next;  
+        printf("Item popped");  
+    }  
+}  
+
+void display(){
+
+    int i;  
+    struct node *ptr;  
+    ptr=head;  
+    if(ptr == NULL)  
+    {  
+        printf("Stack is empty\n");  
+    }  
+    else  
+    {  
+        printf("Printing Stack elements \n");  
+        while(ptr!=NULL)             // why ptr != null.  why not ptr->next or ptr-> data 
+        {  
+            printf("%d\n",ptr->val);  
+            ptr = ptr->next;  
+        }  
+    }  
+}  
+
 
 void main (){
 
@@ -54,66 +112,5 @@ void main (){
                 printf("Please Enter valid choice ");  
             }   
        }  
-    }  
-}  
-
-void push (){  
-    
-    int val;  
-    struct node *ptr = (struct node*)malloc(sizeof(struct node));
-
-        printf("Enter the value");  
-        scanf("%d",&val);  
-        if(head == NULL){         
-            ptr->val = val;  
-            ptr -> next = NULL;  
-            head=ptr;  
-        }   
-        else   
-        {  
-            ptr->val = val;  
-            ptr->next = head;  
-            head=ptr;  
-               
-        }  
-        printf("Item pushed");  
-}  
-  
-void pop(){
-
-    int item;  
-    struct node *ptr;  // why malloc is not used at this position | in push it is used why?  
-    if (head == NULL)  
-    {  
-        printf("Underflow");  
-    }  
-    else  
-    {  
-        item = head->val;  
-        ptr = head;  
-        head = head->next;  
-        free(ptr);  
-        printf("Item popped");  
-          
-    }  
-}  
-
-void display(){
-
-    int i;  
-    struct node *ptr;  
-    ptr=head;  
-    if(ptr == NULL)  
-    {  
-        printf("Stack is empty\n");  
-    }  
-    else  
-    {  
-        printf("Printing Stack elements \n");  
-        while(ptr!=NULL)             // why ptr != null.  why not ptr->next or ptr-> data 
-        {  
-            printf("%d\n",ptr->val);  
-            ptr = ptr->next;  
-        }  
     }  
 }  

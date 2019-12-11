@@ -27,3 +27,8 @@ void main()
 	towerOfHanoi(n,'A', 'C','B');
 }
 
+
+
+// trick printf same both the time
+// recursive call is in cyclic order i.e f,a,t  
+//                                   i.e   a,t,f

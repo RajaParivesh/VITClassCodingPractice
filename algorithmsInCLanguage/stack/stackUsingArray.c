@@ -15,6 +15,44 @@ void push(int element);
 int  pop();
 void display();
 
+void push(int element)
+{
+    if (top >= SIZE)
+    {
+        printf("Stack Overflow, can't add more element element to stack.\n");
+        return;
+    }
+
+    top++;
+
+    stack[top] = element;
+
+    printf("Data pushed to stack.\n");
+}
+
+
+int pop()
+{
+    if (top < 0)
+    {
+        printf("Stack is empty.\n");
+        return INT_MIN;                        // INT_MIN   ???
+     }
+    return stack[top--];
+}
+
+void display(){
+	int temp = top;
+	if(top == -1){
+		printf("Stack is Empty");
+	}else{
+		while(temp != -1){
+    		printf("%d \n", stack[temp]);
+    		temp--;
+		}
+	}
+}
+
 
 int main()
 {
@@ -56,9 +94,9 @@ int main()
                 break;
 
             case 4: 
-            	printf("Display\n");
-            	display();
-            	break;
+                printf("Display\n");
+                display();
+                break;
 
             case 5: 
                 printf("Exiting from app.\n");
@@ -75,42 +113,3 @@ int main()
     return 0;
 }
 
-
-
-void push(int element)
-{
-    if (top >= SIZE)
-    {
-        printf("Stack Overflow, can't add more element element to stack.\n");
-        return;
-    }
-
-    top++;
-
-    stack[top] = element;
-
-    printf("Data pushed to stack.\n");
-}
-
-
-int pop()
-{
-    if (top < 0)
-    {
-        printf("Stack is empty.\n");
-        return INT_MIN;                        // INT_MIN   ???
-     }
-    return stack[top--];
-}
-
-void display(){
-	int temp = top;
-	if(top == -1){
-		printf("Stack is Empty");
-	}else{
-		while(temp != -1){
-		printf("%d \n", stack[temp]);
-		temp--;
-		}
-	}
-}

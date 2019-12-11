@@ -1,7 +1,9 @@
+// infixToPrefix.c
 // infix to postfix using array
 
 #include <ctype.h>
 #include<stdio.h>
+#include<string.h>
 #define size 50                         /* Size of Stack */
 
 char stack[size];
@@ -36,7 +38,22 @@ int pr(char elem)
     }
 }
  
+char revstr(char str[50]){
+	int i;
+	char revstr[50];
+	for(i=0; i<strlen(str); i++){
+		revstr[i]=str[strlen(str)-i];
+	}
+	return revstr;
+}
 void prefixToPostfix(char infx[50]){
+	
+
+
+
+
+
+
 	char pofx[50],ch,elem;
     int i=0,k=0;
 
