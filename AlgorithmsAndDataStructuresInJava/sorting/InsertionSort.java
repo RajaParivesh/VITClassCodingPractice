@@ -1,11 +1,9 @@
 import java.util.*;
-import java.io.*;
-import java.lang.*;
 
 class InsertionSort{
 
 	static void printArray(int arr[]){
-		for(int k=0; k<arr.length; k++)
+		for(int k = 0; k < arr.length; k++)
 			System.out.printf("%d ", arr[k]);
 		System.out.println();
 	}
@@ -15,7 +13,8 @@ class InsertionSort{
 		for(int i=1; i < arr.length; i++){
 			int temp = arr[i];
 			int j;
-			for(j=i-1; j >= 0 && arr[j]>temp; j--){
+						
+			for(j = i-1; j >= 0 && arr[j]>temp; j--){
 				arr[j+1] = arr[j];
 			}
 			arr[j+1] = temp; 
